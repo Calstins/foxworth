@@ -66,7 +66,7 @@ const Header = () => {
                   className={`${
                     link.path === pathname &&
                     'text-accent border-b-2 border-accent'
-                  } capitalize font-semibold hidden lg:flex items-center text-center hover-text-accent transition-all duration-300`}
+                  } capitalize font-semibold hidden lg:flex items-center text-center hover-text-accent transition-all duration-300 font-heading`}
                 >
                   <motion.div whileHover={{ scale: 0.9 }}>
                     {link.name}
@@ -106,7 +106,9 @@ const Header = () => {
             animate={isMenuOpen ? 'visible' : 'hidden'}
             exit="hidden"
             variants={mobileMenuVariants}
-            className="absolute top-16 right-0 w-2/3 bg-white text-center space-y-6 py-6 lg:hidden h-full z-40"
+            className={`absolute top-16 right-0 ${
+              isMenuOpen ? 'block' : 'hidden'
+            } w-2/3 bg-white text-center space-y-6 py-6 lg:hidden h-full z-40 font-heading`}
           >
             {links.map((link, index) => (
               <li
